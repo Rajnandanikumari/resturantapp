@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Hand+Pre:wght@400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+.navigation{
+    list-style: none;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+ 
+}
+
+.navigation li{
+    margin: 0px 20px;
+}
+
+.navigation li a{
+    text-decoration: none;
+    color:white;
+}
+
+/*mobile view*/
+/* .mobile-navigation{
+  list-style: none; */
+  /* background-color: aqua;
+  height:100vh; */
+  
+/* } */
+
+/* .mobile-navigation li{
+    margin-top:20px;
+} */
+
+/* .mobile-navigation li a {
+  text-decoration: none;
+  font-size: 1.4rem; 
+  color:black; */
+  /* margin-top: 20px; */
+  /* display:inline-block; */
+ 
+/* } */
+
+.logoTitle{
+  font-family:"Roboto",sans-serif;
+  font-size: 1.5rem;
+}
+
+/* .active {
+  color:goldenrod !important;
+  font-weight: bold !important;
+} */
