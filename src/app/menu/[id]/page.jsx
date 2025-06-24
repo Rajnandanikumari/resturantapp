@@ -16,8 +16,6 @@ import ReadMore from '@/app/components/readmore';
 import LabelImportantIcon from '@mui/icons-material/LabelImportant';
 
 
-
-
 export default function MenuItemPage() {
     const params = useParams();
     const id = Number(params.id);
@@ -46,32 +44,49 @@ export default function MenuItemPage() {
            The cuisine of Western India is diverse.Maharashtrian cuisine is diverse and ranges from bland to fiery hot.
            The cuisine of Western India is diverse.Maharashtrian cuisine is diverse and ranges from bland to fiery hot...`
         ;
+    const [clickImage, setClickImage] = useState(item.image[0])
+
+
+    let changeImage = (index) => {
+        // clickImage = item.image[index + 1]
+        // console.log("ietem", item.image[index + 1], clickImage)
+        setClickImage(item.image[index - 1])
+    }
 
 
 
     return (
 
         <Grid mt={4} ml={6} container spacing={0} >
-            <Grid size={{ xs: 12, lg: 5 }}>
-                <img src={item.image}
+            <Grid size={{ xs: 12, lg: 5, direction: "row" }}>
+                {item.image.map((image, index) => (
+                    <Box key={index}>
+                        <img src={image}
+                            onClick={() => changeImage(index)}
+                            style={{ width: "40px", height: "40px" }} />
+                    </Box>
+                ))}
+                <img src={clickImage}
                     alt={item.name}
-                    height={500}
-                    width={500}
+                    height={300}
+                    width={400}
                     style={{
                         borderRadius: 65,
-                        height: "30px",
-                        width: "80px",
-                        display: "block"
+                        display: "block",
+                        marginTop: "-250px",
+                        marginLeft: "70px",
+                        position: "absolute"
 
                     }} />
 
 
                 < Button href="/menu" sx={{
-                    marginInlineStart: 20,
+                    marginLeft: "190px",
                     width: 150,
                     border: '4px solid #ff1744',
                     color: "#ff1744",
-                    mt: -5,
+                    mt: 3,
+
                     '&:hover': { backgroundColor: '#ff1744', color: "black" },
                 }}>
                     Add
