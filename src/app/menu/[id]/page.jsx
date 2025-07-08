@@ -1,8 +1,8 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import { MenuListss } from '@/data/data';
-import { Box, Button, Grid, Typography, IconButton } from '@mui/material';
+import { Box, Button, Grid, Typography, IconButton, Table } from '@mui/material';
 import Rating from '@mui/material/Rating';
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 import StarIcon from '@mui/icons-material/Star';
@@ -47,17 +47,24 @@ export default function MenuItemPage() {
     const [clickImage, setClickImage] = useState(item.image[0])
 
 
-    let changeImage = (index) => {
-        // clickImage = item.image[index + 1]
-        // console.log("ietem", item.image[index + 1], clickImage)
-        setClickImage(item.image[index - 1])
+    const changeImage = (index) => {
+        setClickImage(item.image[index])
     }
 
+    const [data, setData] = useState([])
+    // useEffect(async () => {
+    //     let data = await fetch("https://fakestoreapi.com/products");
+    //     data = await data.json();
+    //     console.log(data);
+    //     setData(data)
+
+    // }, [])
+    // console.warn(data);
 
 
     return (
 
-        <Grid mt={4} ml={6} container spacing={0} >
+        <Grid container sx={{ position: "relative", mt: 4, ml: 6 }} spacing={2} >
             <Grid size={{ xs: 12, lg: 5, direction: "row" }}>
                 {item.image.map((image, index) => (
                     <Box key={index}>
@@ -69,24 +76,23 @@ export default function MenuItemPage() {
                 <img src={clickImage}
                     alt={item.name}
                     height={300}
-                    width={400}
+                    width={300}
                     style={{
                         borderRadius: 65,
                         display: "block",
                         marginTop: "-250px",
                         marginLeft: "70px",
-                        position: "absolute"
-
+                        position: "absolute",
+                        width: { md: "360px", sm: "700px" }
                     }} />
 
 
-                < Button href="/menu" sx={{
-                    marginLeft: "190px",
+                < Button href="/menulistitem" sx={{
+                    marginLeft: "140px",
                     width: 150,
                     border: '4px solid #ff1744',
                     color: "#ff1744",
                     mt: 3,
-
                     '&:hover': { backgroundColor: '#ff1744', color: "black" },
                 }}>
                     Add
@@ -95,11 +101,9 @@ export default function MenuItemPage() {
 
                     }} />
                 </Button>
-
-
             </Grid>
             <Grid size={{ xs: 12, lg: 6 }}
-                sx={{ overflowY: "scroll", height: "320px" }}>
+                sx={{ overflowY: "scroll", height: "520px", color: "black" }}>
                 <Typography variant='h5' style={{ ml: 0.5, fontWeight: "bold" }}>{item.name}</Typography>
                 <Box sx={{ display: 'flex', alignItems: 'center' }}>
                     <Rating
@@ -127,11 +131,20 @@ export default function MenuItemPage() {
                 <Typography variant="h8" sx={{ color: "#0000", fontSize: "2" }}>
                     <CurrencyRupeeIcon sx={{ fontSize: 13, mr: -0.9 }} /> {item.price}
                 </Typography>
+                {/* <Table>
+
+                    {data.map((pro) =>
+                        <tr>
+                            <td>{pro.title}</td>
+                        </tr>
+                    )}
+
+                </Table> */}
                 <Typography variant="h6" style={{ color: "black", fontStyle: "bold", mt: "-2" }}>Available Offers</Typography>
-                <Typography variant="body1"><LabelImportantIcon sx={{ color: "#2e7d32", verticalAlign: "bottom" }} /><Box variant="span" sx={{ color: 'black', fontWeight: "bold", display: "inline" }}>Combo Offer</Box>sx2 items save ₹20; Buy 3 or more save ₹40 <Box sx={{ color: "#43a047", fontWeight: 600, display: "inline" }}>T&C</Box></Typography>
-                <Typography variant="body1"><LabelImportantIcon sx={{ color: "#2e7d32", verticalAlign: "bottom" }} /><Box variant="span" sx={{ color: "black", fontWeight: "bold", display: "inline" }}>Special Price </Box>Get extra 5% off (price inclusive of cashback/coupon)<Box sx={{ color: "#43a047", fontWeight: 600, display: "inline" }}>T&C</Box></Typography>
-                <Typography variant="body1"><LabelImportantIcon sx={{ color: "#2e7d32", verticalAlign: "bottom" }} /><Box variant="span" sx={{ color: "black", fontWeight: "bold", display: "inline" }}>Bank Offer 100% </Box>Cashback upto 500Rs on Axis Bank SuperMoney Rupay CC UPI transactions on super.money UPI <Box sx={{ color: "#43a047", fontWeight: 600, display: "inline" }}>T&C</Box></Typography>
-                <Typography variant="body1"><LabelImportantIcon sx={{ color: "#2e7d32", verticalAlign: "bottom" }} /><Box variant="span" sx={{ color: "black", fontWeight: "bold", display: "inline" }}>Bank Offer 5% </Box> Unlimited Cashback on Flipkart Axis Bank Credit Card <Box sx={{ color: "#43a047", fontWeight: 600, display: "inline" }}>T&C</Box></Typography>
+                <Typography variant="body1" component="div"><LabelImportantIcon sx={{ color: "#2e7d32", verticalAlign: "bottom" }} /><Box component="span" sx={{ color: 'black', fontWeight: "bold", display: "inline" }}>Combo Offer</Box>sx2 items save ₹20; Buy 3 or more save ₹40 <Box sx={{ color: "#43a047", fontWeight: 600, display: "inline" }}>T&C</Box></Typography>
+                <Typography variant="body1" component="div"><LabelImportantIcon sx={{ color: "#2e7d32", verticalAlign: "bottom" }} /><Box component="span" sx={{ color: "black", fontWeight: "bold", display: "inline" }}>Special Price </Box>Get extra 5% off (price inclusive of cashback/coupon)<Box sx={{ color: "#43a047", fontWeight: 600, display: "inline" }}>T&C</Box></Typography>
+                <Typography variant="body1" component="div"><LabelImportantIcon sx={{ color: "#2e7d32", verticalAlign: "bottom" }} /><Box component="span" sx={{ color: "black", fontWeight: "bold", display: "inline" }}>Bank Offer 100% </Box>Cashback upto 500Rs on Axis Bank SuperMoney Rupay CC UPI transactions on super.money UPI <Box sx={{ color: "#43a047", fontWeight: 600, display: "inline" }}>T&C</Box></Typography>
+                <Typography variant="body1" component="div"><LabelImportantIcon sx={{ color: "#2e7d32", verticalAlign: "bottom" }} /><Box component="span" sx={{ color: "black", fontWeight: "bold", display: "inline" }}>Bank Offer 5% </Box> Unlimited Cashback on Flipkart Axis Bank Credit Card <Box sx={{ color: "#43a047", fontWeight: 600, display: "inline" }}>T&C</Box></Typography>
                 <Box sx={{ display: "flex", gap: 2, mt: -0.3 }}>
                     <ShareIcon sx={{ color: "#d81b60" }} />
                 </Box>

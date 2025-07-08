@@ -1,6 +1,7 @@
 // import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 // import '@fontsource/roboto/800.css';
+import { Box } from "@mui/material";
 import Providers from "../themess/provider";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -28,7 +29,10 @@ export default function RootLayout({ children }) {
         <Providers>
           <Header />
           {children}
-          <Footer />
+          <Box sx={{ marginTop: 47 }}>
+            <Footer />
+          </Box>
+
         </Providers>
       </body>
     </html>

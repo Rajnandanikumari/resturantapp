@@ -1,6 +1,6 @@
 "use client"
 import { MenuListss } from '@/data/data'
-import { Box, Card, CardActionArea, CardMedia, Typography, CardContent } from '@mui/material'
+import { Box, Card, CardActionArea, CardMedia, Typography, CardContent, Grid } from '@mui/material'
 import Link from 'next/link'
 import React from 'react'
 import Rating from '@mui/material/Rating';
@@ -36,17 +36,22 @@ export default function page() {
 
     return (
         <>
+
             <Box sx={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
                 {
                     MenuListss.map((menu, idx) => (
-                        <Card sx={{ maxWidth: "390px", display: "flex", flexWrap: "wrap", justifyContent: "center", m: 4 }} key={menu.id ?? idx}>
+                        <Card sx={{
+                            maxWidth: {
+                                md: "390px", xl: "490px"
+                            }, display: "flex", flexWrap: "wrap", justifyContent: "center", m: 4
+                        }} key={menu.id ?? idx}>
                             <CardActionArea component={Link} href={`/menu/${menu.id}`}>
                                 <CardMedia sx={{ minHeight: 400 }} component={'img'} image={menu.image[0]} alt={menu.name} />
                                 <CardContent>
                                     <Typography variant='h5' gutterBottom
                                         component={"div"} >
                                         {menu.name}
-                                        <Box sx={{ width: 10, display: 'flex', alignItems: 'center' }}>
+                                        <Box sx={{ width: 5, display: 'flex', alignItems: 'center' }}>
                                             <Rating
                                                 name="hover-feedback"
                                                 value={value}
@@ -76,11 +81,11 @@ export default function page() {
                                 </CardContent>
 
                             </CardActionArea>
-
                         </Card>
                     ))
                 }
             </Box>
+
         </>
     )
 }

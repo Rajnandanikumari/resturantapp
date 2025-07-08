@@ -8,17 +8,18 @@ export default function page() {
     return (
         <>
             <Box sx={{
-                my: 5, ml: 10,
+                my: 10, ml: 10,
                 "& h4": {
                     fontWeight: 'bold',
                     mb: 2,
+                    my: 5
                 },
                 "& p": { textAlign: 'justify' },
             }}>
                 <Typography variant='h4'>
                     Contact My Resturant
                 </Typography>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio deleniti dicta ad quis asperiores repudiandae voluptatem blanditiis. Harum eum, dolorem dolores blanditiis voluptatem praesentium quod, dolor odit mollitia voluptates error!</p>
+                <Typography variant='p' sx={{ marginTop: "10px" }}>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio deleniti dicta ad quis asperiores repudiandae voluptatem blanditiis. Harum eum, dolorem dolores blanditiis voluptatem praesentium quod, dolor odit mollitia voluptates error!</Typography>
             </Box>
             <Box sx={{
                 m: 3, width: "600px", ml: 10, "@media (max-width:600px)": {

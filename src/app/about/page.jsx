@@ -11,7 +11,7 @@ export default function page() {
                 "$ h4": {
                     fontWeight: "bold",
                     my: 2,
-                    fontSize: '2rem'
+                    fontSize: '4rem'
                 },
                 "& p": {
                     textAlign: "justify",
@@ -25,14 +25,14 @@ export default function page() {
                 }
             }}>
                 <Typography variant='h4'> Welcome to my Resturant </Typography>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus eius, nulla aut aperiam modi eligendi odit asperiores corrupti.
+                <Typography variant="body1" sx={{ marginTop: "50px" }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus eius, nulla aut aperiam modi eligendi odit asperiores corrupti.
                     Ipsum nemo nobis laborum expedita iste eius ullam debitis aperiam, quasi cupiditate!
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem natus debitis, cumque inventore, ratione odit soluta nulla maxime optio assumenda eaque
                     impedit tempora, harum corrupti deleniti aspernatur eligendi illum? Ducimus!
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores consectetur dolorem ducimus provident officiis illum architecto delectus, dolorum vero quis nemo laboriosam voluptatem unde consequatur
                     amet tenetur, commodi fuga suscipit!
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id eum iste fuga ab, eligendi commodi fugit harum eius atque, nostrum dignissimos quod, sint accusantium! Nihil corporis incidunt nostrum eaque eligendi.
-                </p>
+                </Typography>
             </Box>
         </>
     )
