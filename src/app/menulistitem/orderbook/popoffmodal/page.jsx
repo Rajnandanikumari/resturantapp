@@ -15,7 +15,7 @@ const Popoffmodal = ({ closeModal }) => {
                 <Grid size={{ md: 12, sm: 6 }}>
                     <Typography variant="h5" >Your Order Completed SuccessFully</Typography>
                     <Typography variant="h6">Thank You ❤️🎉✨</Typography>
-                    <Button onClick={closeModal} component={Link} href="/home" sx={{ color: "white", backgroundColor: "goldenrod" }}>Accept It</Button>
+                    <Button onClick={closeModal} component={Link} href="/" sx={{ color: "white", backgroundColor: "goldenrod" }}>Accept It</Button>
 
                 </Grid>
             </Grid >
