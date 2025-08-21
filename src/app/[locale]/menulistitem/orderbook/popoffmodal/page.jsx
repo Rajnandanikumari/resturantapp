@@ -1,23 +1,33 @@
 "use client";
-import React from 'react'
-import { Box, Typography, Button } from '@mui/material'
-import Link from 'next/link';
+import React from "react";
+import { Box, Typography, Button } from "@mui/material";
+import Link from "next/link";
 
-
-const Popoffmodal = ({ closeModal }) => {
+const Popoffmodal = () => {
     return (
-        <>
-            <Box sx={{ display: "grid", placeContent: "center", height: "100vh" }}>
-                <Box sx={{ border: 2, borderColor: "goldenrod", textAlign: "center", padding: "20px" }}>
-                    <Typography variant="h5" sx={{ justifyContent: "center", alignItems: "center" }}>Your Order Completed SuccessFully</Typography>
-                    <Typography variant="h6">Thank You ❤️🎉✨</Typography>
-                    <Button onClick={closeModal} component={Link} href="/" sx={{ color: "white", backgroundColor: "goldenrod" }}>Accept It</Button>
+        <Box sx={{ display: "grid", placeContent: "center", height: "100vh" }}>
+            <Box
+                sx={{
+                    border: 2,
+                    borderColor: "goldenrod",
+                    textAlign: "center",
+                    padding: "20px",
+                }}
+            >
+                <Typography variant="h5">
+                    Your Order Completed Successfully
+                </Typography>
+                <Typography variant="h6">Thank You ❤️🎉✨</Typography>
+                <Button
+                    component={Link}
+                    href="/"
+                    sx={{ color: "white", backgroundColor: "goldenrod" }}
+                >
+                    Accept It
+                </Button>
+            </Box>
+        </Box>
+    );
+};
 
-                </Box>
-            </Box >
-
-        </>
-    )
-}
-
-export default Popoffmodal
+export default Popoffmodal;

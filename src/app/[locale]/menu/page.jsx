@@ -1,5 +1,5 @@
 "use client"
-import { MenuListss } from '../../../../src/data/data';
+import { MenuListss } from '../../../data/data';
 import { Box, Card, CardActionArea, CardMedia, Typography, CardContent, Grid, Stack } from '@mui/material'
 import Link from 'next/link'
 import React from 'react'
