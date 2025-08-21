@@ -89,14 +89,14 @@ export default function HomePage() {
 
     return (
         <>
-            <Box sx={{ p: 4, maxWidth: 800, mx: "auto" }}>
+            <Box >
                 <Typography variant="h3" align="center" gutterBottom>
                     My Restaurant
                 </Typography>
 
                 {/* MENU */}
-                <TableContainer sx={{ mb: 6 }}>
-                    <Table>
+                <TableContainer sx={{ border: "4px solid goldenrod", width: { md: 660, sm: 450 }, justifyContent: "center", alignItems: "center", marginLeft: { sm: 20, md: 47 }, marginBottom: { md: 10, sm: 10, xs: 10 } }}>
+                    <Table >
                         <TableHead>
                             <TableRow>
                                 {["Dish", "Price", "Piece", "Actions"].map(h => (
@@ -133,45 +133,48 @@ export default function HomePage() {
                 {/* ORDER SUMMARY */}
                 {orders.length > 0 && (
                     <>
-                        <Typography variant="h4" gutterBottom>
-                            Your Order
-                        </Typography>
-                        <TableContainer>
-                            <Table>
-                                <TableHead>
-                                    <TableRow>
-                                        {["Dish", "Price", "Piece", "Total Amount"].map(h => (
-                                            <TableCell key={h} sx={{ fontWeight: 'bold', color: "goldenrod" }}>
-                                                {h}
-                                            </TableCell>
-                                        ))}
-                                    </TableRow>
-                                </TableHead>
-                                <TableBody>
-                                    {orders.map(d => (
-                                        <TableRow key={d.id}>
-                                            <TableCell>{d.name}</TableCell>
-                                            <TableCell>${d.price.toFixed(2)}</TableCell>
-                                            <TableCell>{d.qty}</TableCell>
-                                            <TableCell>${d.TotalAmount.toFixed(2)}</TableCell>
+                        <Box sx={{ border: "4px solid goldenrod", width: { md: 660, sm: 450 }, justifyContent: "center", alignItems: "center", marginLeft: { sm: 20, md: 47 }, marginBottom: { md: 10, sm: 10, xs: 10 } }}>
+                            <Typography variant="h4" align="center" gutterBottom>
+                                Your Order
+                            </Typography>
+                            <TableContainer>
+                                <Table>
+                                    <TableHead>
+                                        <TableRow>
+                                            {["Dish", "Price", "Piece", "Total Amount"].map(h => (
+                                                <TableCell key={h} sx={{ fontWeight: 'bold', color: "goldenrod" }}>
+                                                    {h}
+                                                </TableCell>
+                                            ))}
                                         </TableRow>
-                                    ))}
-                                    <TableRow>
-                                        <TableCell colSpan={3} align="right" sx={{ color: "goldenrod" }}>
-                                            <strong>Total:</strong>
-                                        </TableCell>
-                                        <TableCell>
-                                            <strong>${grandTotal}</strong>
-                                        </TableCell>
-                                    </TableRow>
-                                </TableBody>
-                            </Table>
-                        </TableContainer>
-                        {/* {orders.length > 0 && */}
-                        <Button component={Link} sx={{ marginLeft: 30, color: "white", backgroundColor: "goldenrod", marginTop: 10, width: "180px", height: "60px", borderRadius: "10px" }} href='/menulistitem/orderbook/popoffmodal'
-                            onClick={() => setShowModal(true)}>Need To Pay</Button>
-                        {showModal && <Popoffmodal closeModal={closeModal} />}
+                                    </TableHead>
+                                    <TableBody>
+                                        {orders.map(d => (
+                                            <TableRow key={d.id}>
+                                                <TableCell>{d.name}</TableCell>
+                                                <TableCell>${d.price.toFixed(2)}</TableCell>
+                                                <TableCell>{d.qty}</TableCell>
+                                                <TableCell>${d.TotalAmount.toFixed(2)}</TableCell>
+                                            </TableRow>
+                                        ))}
+                                        <TableRow>
+                                            <TableCell colSpan={3} align="right" sx={{ color: "goldenrod" }}>
+                                                <strong>Total:</strong>
+                                            </TableCell>
+                                            <TableCell>
+                                                <strong>${grandTotal}</strong>
+                                            </TableCell>
+                                        </TableRow>
+                                    </TableBody>
+                                </Table>
+                            </TableContainer>
+                            {/* {orders.length > 0 && */}
+                            <Button component={Link} sx={{ marginLeft: { md: 31, sm: 16, xs: 10 }, marginBottom: 2, marginTop: 2, color: "white", backgroundColor: "goldenrod", width: "180px", height: "60px", borderRadius: "10px" }} href='/menulistitem/orderbook/popoffmodal'
+                                onClick={() => setShowModal(true)}>Need To Pay</Button>
+                            {showModal && <Popoffmodal closeModal={closeModal} />}
+                        </Box>
                     </>
+
                 )}
             </Box>
         </>

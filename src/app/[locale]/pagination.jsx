@@ -15,10 +15,10 @@ const Pagination = (
     }
 ) => {
     return (
-        <Box sx={{ display: "flex", flexWrap: "wrap", marginTop: 10 }}>
+        <Box>
             <Button
                 disabled={currentpage === 0}
-                sx={{ padding: "2px", margin: "2px", border: "2px solid black", cursor: "pointer", color: "goldenrod" }}
+                sx={{ padding: "2px", border: "2px solid black", cursor: "pointer", color: "goldenrod" }}
                 onClick={goToPrevPage}
             >
                 <ArrowBackIosNewIcon />
@@ -27,11 +27,11 @@ const Pagination = (
                 <Button
                     sx={{
                         padding: "2px",
-                        margin: "2px",
                         border: "2px solid black",
                         cursor: "pointer",
                         color: "black",
-                        backgroundColor: n === currentpage ? "goldenrod" : ""
+                        backgroundColor: n === currentpage ? "goldenrod" : "",
+
                     }}
 
                     key={n}
@@ -42,7 +42,7 @@ const Pagination = (
             ))}
             <Button
                 disabled={currentpage === noOfPages - 1}
-                sx={{ padding: "2px", margin: "2px", border: "2px solid black", cursor: "pointer", color: "goldenrod" }}
+                sx={{ padding: "2px", border: "2px solid black", cursor: "pointer", color: "goldenrod" }}
                 onClick={goToNextPage}
             >
                 <ArrowForwardIosIcon />

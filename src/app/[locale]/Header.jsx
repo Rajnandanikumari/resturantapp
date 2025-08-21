@@ -5,6 +5,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import styles from "../../styles/HeaderStyle.module.css";
 // import { useState } from 'react';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
+
 
 // import Logo from './logo.svg';
 // import { NavLink } from 'react-router-dom';
@@ -15,6 +17,8 @@ export default function Header() {
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     }
+
+    const t = useTranslations('headers');
     const drawer = (
         <Box>
 
@@ -23,7 +27,7 @@ export default function Header() {
     return (
         <>
             <Box>
-                <AppBar position="static" component="nav" sx={{ backgroundColor: "black", height: "80px" }}>
+                <AppBar position="sticky" component="nav" sx={{ backgroundColor: "black", height: "80px" }}>
                     <Toolbar>
                         <IconButton color="inherit" aria-label="open drawer" edge="start"
                             onClick={handleDrawerToggle}
@@ -49,11 +53,11 @@ export default function Header() {
                         >
                             <ul className={styles.navigation}>
                                 <li>
-                                    <Link href="/">Home</Link>
+                                    <Link href="/">{t('home')}</Link>
                                 </li>
-                                <li> <Link href="/menu">Menu</Link ></li>
-                                <li> <Link href="/about">About</Link ></li>
-                                <li><Link href="/contact">Contact</Link ></li>
+                                <li> <Link href="/menu">{t('menu')}</Link ></li>
+                                <li> <Link href="/about">{t("about")}</Link ></li>
+                                <li><Link href="/contact">{t("contact")}</Link ></li>
                             </ul>
                         </Box>
                     </Toolbar>

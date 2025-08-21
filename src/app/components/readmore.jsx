@@ -1,7 +1,7 @@
 // components/ReadMore.jsx
 "use client";
 import React, { useState } from "react";
-import { Typography, Link, Box, colors } from "@mui/material";
+import { Typography, Link, Box } from "@mui/material";
 
 export default function ReadMore({
     text,

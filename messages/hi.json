@@ -1,0 +1,67 @@
+{
+    "headers": {
+        "home": "होम",
+        "menu": "मेनू",
+        "about": "के बारे में",
+        "contact": "संपर्क"
+    },
+    "content": {
+        "head": "खाद्य वेबसाइट",
+        "para": "भारत में सबसे अच्छा भोजन",
+        "type": "अभी ऑर्डर करें"
+    },
+    "footer": {
+        "title": "सभी अधिकार सुरक्षित &copy; टेक्निफो आईटी"
+    },
+    "loginPage": {
+        "login": "लॉगिन",
+        "title": "हमारे प्लेटफ़ॉर्म में साइन इन करें",
+        "emailLabel": "ईमेल पता",
+        "emailPlaceholder": "name@company.com",
+        "passwordLabel": "पासवर्ड",
+        "passwordPlaceholder": "••••••••",
+        "rememberMe": "मुझे याद रखें",
+        "forgotPassword": "पासवर्ड भूल गए?",
+        "submitButton": "अपने खाते में साइन इन करें",
+        "notRegistered": "पंजीकृत नहीं हैं? खाता बनाएं",
+        "createAccount": "खाता बनाएं",
+        "successMessage": "लॉगिन सफल! रीडायरेक्ट किया जा रहा है..."
+    },
+    "menuses": {
+        "1": {
+            "name": "डोसा",
+            "Description": "इप्सम टेक्स्ट के लिए प्लेसहोल्डर पाठ उत्पन्न करें",
+            "price": 200
+        },
+        "2": {
+            "name": "छोला",
+            "Description": "इप्सम टेक्स्ट के लिए प्लेसहोल्डर पाठ उत्पन्न करें",
+            "price": 200,
+            "id": 2
+        },
+        "3": {
+            "name": "Idli Sambhar",
+            "Description": "इप्सम टेक्स्ट के लिए प्लेसहोल्डर पाठ उत्पन्न करें",
+            "price": 300,
+            "id": 3
+        },
+        "4": {
+            "name": "MasalaDosa",
+            "Description": "इप्सम टेक्स्ट के लिए प्लेसहोल्डर पाठ उत्पन्न करें",
+            "price": 100,
+            "id": 4
+        },
+        "5": {
+            "name": "Gujrati",
+            "Description": "इप्सम टेक्स्ट के लिए प्लेसहोल्डर पाठ उत्पन्न करें",
+            "price": 400,
+            "id": 5
+        },
+        "6": {
+            "name": "Paneer",
+            "Description": "इप्सम टेक्स्ट के लिए प्लेसहोल्डर पाठ उत्पन्न करें",
+            "price": 500,
+            "id": 6
+        }
+    }
+}

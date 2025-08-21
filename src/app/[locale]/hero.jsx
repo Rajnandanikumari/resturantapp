@@ -3,8 +3,12 @@ import { Grid, Button, Box, Typography, Link } from "@mui/material";
 import React, { useEffect, useMemo } from "react";
 import Image from "next/image";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import { useTranslations } from 'next-intl';
+// import { Link } from '@/i18n/navigation';
+
 
 export default function Hero() {
+
     const [current, setCurrent] = React.useState(0);
 
     const images = useMemo(
@@ -33,6 +37,8 @@ export default function Hero() {
         setCurrent(current === 0 ? images.length - 1 : current - 1);
     }
 
+    const t = useTranslations('content');
+
     return (
         <Grid container direction={{ xs: "column-reverse", md: "row" }} sx={{}}>
             <Grid
@@ -40,10 +46,10 @@ export default function Hero() {
                 justifyContent="center"
                 alignContent="center">
                 <Box sx={{ padding: { xs: "30px 20px", md: "40px" } }}>
-                    <Typography varient="h1" color="black" fontWeight={700} fontSize={65} >Food Website</Typography>
-                    <Typography variant="body1" fontSize={48}>Best Food In India</Typography>
+                    <Typography varient="h1" color="black" fontWeight={700} fontSize={65} >{t('head')}</Typography>
+                    <Typography variant="body1" fontSize={48}>{t('para')}</Typography>
                     <Link href="/menu">
-                        <Button sx={{ padding: "1rem 3rem", backgroundColor: "black", color: "white" }}>ORDER NOW</Button>
+                        <Button sx={{ padding: "1rem 3rem", backgroundColor: "black", color: "white" }}>{t('type')}</Button>
                     </Link>
                 </Box>
 

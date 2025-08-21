@@ -21,7 +21,9 @@
     "@mui/material": "^7.1.1",
     "@mui/styled-engine-sc": "^7.1.1",
     "font-awesome": "^4.7.0",
+    "i18next": "^25.3.2",
     "next": "15.3.3",
+    "next-intl": "^4.3.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-simple-image-slider": "^2.4.1",
@@ -30,6 +32,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@types/node": "24.3.0",
     "eslint": "^9",
     "eslint-config-next": "15.3.3"
   }

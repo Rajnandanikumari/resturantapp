@@ -1,12 +1,18 @@
 "use client";
-import { Typography, Box } from '@mui/material'
+import { Typography, Box, Button } from '@mui/material'
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import YouTubeIcon from '@mui/icons-material/YouTube';
+import Link from 'next/link';
+import { useTranslations } from 'next-intl';
+
+
 
 
 export default function Footer() {
+    const t = useTranslations('footer');
+
     return (
         <>
             <Box sx={{
@@ -35,7 +41,11 @@ export default function Footer() {
                     '@media (max-width:600px)': {
                         fontSize: "1rem",
                     },
-                }}>All rights Reserved &copy: Technifo IT</Typography>
+                }}>{t('title')}</Typography>
+                <Box>
+                    <Button component={Link} href="/hi" sx={{ color: "goldenrod" }} >Hindi</Button>
+                    <Button component={Link} href="/en" sx={{ color: "goldenrod" }}>English</Button>
+                </Box>
             </Box >
         </>
     )
