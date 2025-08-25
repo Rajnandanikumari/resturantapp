@@ -11,7 +11,7 @@ import { useTranslations } from 'next-intl';
 // import Pagination from '@mui/material/Pagination';
 
 // import StarBorderIcon from '@mui/icons-material/StarBorder';
-import Pagination from '../../[locale]/Pagination'
+import Pagination from '../../components/pagination'
 
 export default function Page() {
     const [value, setValue] = React.useState(2);
